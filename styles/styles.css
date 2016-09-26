@@ -1,0 +1,34 @@
+.emptyMessage {
+  font-weight: bold;
+  color: red;
+  font-size: 1.2em;
+}
+li {
+  margin-bottom: 7px;
+  font-size: 1.2em;
+}
+li > button {
+  margin-left: 6px;
+}
+button > span {
+  color: green;
+}
+
+#cont{ 
+padding:10px; 
+overflow:hidden; 
+} 
+
+#list1{ 
+border-width: 1px;
+float:left; 
+}
+
+#list2{ 
+border-style: dotted;
+border-width: 1px;
+float:right; 
+padding:10px; 
+width:300px; 
+margin:40px; 
+} 

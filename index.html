@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListCheckOff'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">    
+    <title>Shopping List Check Off</title>
+  </head>
+  <body>
+    <h1>Shopping List Check Off</h1>
+
+    <div id="cont">
+      
+      <div id="list1" ng-controller='ToBuyController as TBC'>
+        <h2>To Buy:</h2>
+        <li ng-repeat="item in TBC.listToBuy">
+          Buy {{ item.quantity }}   {{ item.name }}
+          <button ng-click="TBC.addItem(item.name,item.quantity, $index);">Bought</button>
+        </li>
+        <label ng-model="TBC.listBuyEmpty"></label>
+        <span ng-if="TBC.listBuyEmpty" >
+          Everything is bought!
+        </span>        
+         
+      </div>
+
+      <div id="list2" ng-controller='AlreadyBoughtController as ABC'>
+        <h2>Already Bought:</h2>
+        <ul>
+          <li ng-repeat="item in ABC.listBought">
+            Bought {{ item.quantity }}  {{ item.name }}
+          </li>
+        </ul>
+        <span ng-if="ABC.chklistBoughtEmpty()" >
+          Nothing bought yet
+        </span>        
+
+      </div>
+      
+    </div>
+
+  </body>
+</html>
